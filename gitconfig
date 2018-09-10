@@ -58,9 +58,9 @@
   get = "!f() { o=origin && (($#)) && o=$1; b=$(git rev-parse --abbrev-ref HEAD) && (($#>1)) && b=$2; (git fetch $o $b && git rebase $o/$b) }; f"
 
 [merge]
-	tool = diffmerge
+	tool = opendiff
 [diff]
-	tool = diffmerge
+	tool = opendiff
 [difftool]
 	prompt = false
 [user]
@@ -69,7 +69,7 @@
 [difftool "diffmerge"]
 	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	cmd = "opendiff --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
 	trustExitCode = true
 [push]
 	default = simple
