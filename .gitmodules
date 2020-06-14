@@ -1,8 +1,1 @@
-[submodule "antigen"]
-	path = antigen
-	url = https://github.com/zsh-users/antigen.git
-[submodule "solarized"]
-	path = solarized
-	url = git://github.com/altercation/solarized.git
-
 ignore = dirty

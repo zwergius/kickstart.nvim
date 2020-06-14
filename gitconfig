@@ -17,6 +17,7 @@
     changed = green
     untracked = cyan
 [alias]
+  g = git
   cm = shortlog -nse --no-merges
 
   fi = !git ls-files | grep -i
@@ -64,8 +65,7 @@
 [difftool]
 	prompt = false
 [user]
-	name = ***REMOVED***
-	email = ***REMOVED***
+# These values are set in ~/.local.gitconfig
 [difftool "diffmerge"]
 	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [mergetool "diffmerge"]
@@ -76,3 +76,5 @@
 [core]
 	excludesfile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
+[include]
+  path = ~/.local.gitconfig
