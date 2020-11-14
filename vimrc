@@ -1,54 +1,5 @@
-"installs vimplug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
-call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-" Plug 'junegunn/vim-easy-align'
-"
-" " Any valid git URL is allowed
-" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-"
-" " Multiple Plug commands can be written in a single line using | separators
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-"
-" " On-demand loading
-" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-"
-" " Using a non-master branch
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-" Statusline
-Plug 'vim-airline/vim-airline'
-" Git
-Plug 'tpope/vim-fugitive'
-
-" Color themes
-Plug 'w0ng/vim-hybrid'
-" Plug 'fatih/vim-go', { 'tag': '*' }
-
-" Language pack, https://github.com/sheerun/vim-polyglot
-Plug 'sheerun/vim-polyglot'
-
-"linting
-Plug 'w0rp/ale'
-""Plug 'vim-syntastic/syntastic'
-""Plug 'mtscout6/syntastic-local-eslint.vim'
-
-" Fuzzy search
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-" " Unmanaged plugin (manually installed and updated)
-" Plug '~/my-prototype-plugin'
-"
-" " Initialize plugin system
-call plug#end()
+"This handles plugins to install
+source ~/.vim/plug.vim
 
 "julien's minimum stuff
 ""syntax off
@@ -64,6 +15,8 @@ set clipboard=unnamed
 " let g:netrw_cursorline=0
 let g:netrw_liststyle=3
 
+"svelte
+"au! BufRead,BufNewFile *.svelte set filetype=html
 " CTRL+w saves file
 nnoremap <C-w> :update<cr>
 inoremap <C-w> <Esc>:update<cr>
@@ -102,32 +55,25 @@ set smartcase                   " ... unless they contain at least one capital l
 " clear searched text on enter
 nnoremap <silent> <CR> :noh<CR><CR>
 set t_Co=256
-"let g:solarized_termcolors=256 
 set background=dark
 colorscheme hybrid 
-" autocompletes
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ` ``<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap `<CR> `<CR>`<ESC>O
-inoremap [<CR> [<CR>]<ESC>O
-inoremap (<CR> (<CR>)<ESC>O
 
 "linting 
-""let g:ale_statusline_format = ['⬥ %d', '⚠ %d', '✓']
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
       \  'html':[], 
       \  'javascript': ['eslint'],
       \  'javascript.jsx': ['eslint'],
+      \  'xml': ['plugin-xml'],
       \}
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier'] 
+let g:ale_fixers['javascript.jsx'] = ['prettier'] 
+let g:ale_fixers['javascriptreact'] = ['prettier'] 
 let g:ale_fixers['html'] = ['prettier'] 
+let g:ale_fixers['svg'] = ['prettier'] 
+let g:ale_fixers['css'] = ['prettier'] 
+let g:ale_fixers['xml'] = ['prettier'] 
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 " Console log from insert mode; Puts focus inside parentheses
@@ -195,3 +141,6 @@ augroup END
 
 ""Execute js file
 nnoremap <leader><leader> :w !node <cr>
+
+" COC settings
+" source ~/.vim/coc.vim
