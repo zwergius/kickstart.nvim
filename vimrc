@@ -60,9 +60,11 @@ colorscheme hybrid
 
 "linting 
 let g:airline#extensions#ale#enabled = 1
+let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
 let g:ale_linters = {
       \  'html':[], 
       \  'javascript': ['eslint'],
+      \  'svelte': ['stylelint', 'eslint'],
       \  'javascript.jsx': ['eslint'],
       \  'xml': ['plugin-xml'],
       \}
@@ -74,6 +76,7 @@ let g:ale_fixers['html'] = ['prettier']
 let g:ale_fixers['svg'] = ['prettier'] 
 let g:ale_fixers['css'] = ['prettier'] 
 let g:ale_fixers['xml'] = ['prettier'] 
+let g:ale_fixers['svelte'] = ['prettier'] 
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 " Console log from insert mode; Puts focus inside parentheses
