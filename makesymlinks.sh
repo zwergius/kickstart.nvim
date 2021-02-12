@@ -8,7 +8,7 @@
 
 dir=~/Git/dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="vim_pluginsrc aliases bashrc zshrc gitconfig bash_profile vimrc vim gitignore"    # list of files/folders to symlink in homedi
+files="brewfile vim_pluginsrc aliases bashrc zshrc gitconfig bash_profile vimrc vim gitignore"    # list of files/folders to symlink in homedi
 
 ##########
 
@@ -29,3 +29,6 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -f -s $dir/$file ~/.$file
 done
+
+# installs antibody if needed
+$dir/antibody/install.sh
