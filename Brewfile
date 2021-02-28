@@ -5,8 +5,14 @@
 # Upgrade any already-installed formulae
 #brew 'upgrade'
 
+# tap's 
+tap 'homebrew/cask'
+tap 'homebrew/bundle'
+tap 'homebrew/cask-drivers'
+
 #Formulaes to be installed
-brew 'vim', args: ['--override-system-vi']
+brew 'mas'
+brew 'vim'
 brew 'node'
 brew 'cmake'
 brew 'ripgrep'
@@ -18,3 +24,33 @@ brew 'nss'
 #
 # # Remove outdated versions from the cellar
 # cleanup
+
+# Mac AppStore apps
+mas 'Keynote', id: 409183694
+mas 'Pages', id: 409201541 
+mas 'Tweetbot', id: 557168941
+mas 'Numbers', id: 409203825
+mas 'Xcode', id: 497799835
+
+# GUI apps
+cask 'firefox'
+cask 'google-chrome'
+cask 'brave-browser'
+cask 'opera'
+
+cask 'discord'
+cask 'skype'
+cask 'signal'
+cask 'zoom'
+
+cask 'rectangle'
+cask 'choosy'
+cask 'protonmail-bridge'
+cask 'spotify'
+cask 'megasync'
+cask 'zsa-wally'
+cask 'graphiql'
+
+cask 'lulu'
+cask 'knockknock'
+cask 'oversight'
