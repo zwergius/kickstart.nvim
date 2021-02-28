@@ -25,7 +25,11 @@ brew 'nss'
 # cleanup
 
 # Mac AppStore apps
-
+mas 'Keynote', id: 409183694
+mas 'Pages', id: 409201541 
+mas 'Tweetbot', id: 557168941
+mas 'Numbers', id: 409203825
+mas 'Xcode', id: 497799835
 
 # GUI apps
 cask 'firefox'
@@ -42,6 +46,8 @@ cask 'rectangle'
 cask 'choosy'
 cask 'protonmail-bridge'
 cask 'spotify'
+cask 'megasync'
+cask 'zsa-wally'
 
 cask 'lulu'
 cask 'knockknock'
