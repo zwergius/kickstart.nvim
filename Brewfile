@@ -8,6 +8,7 @@
 # tap's 
 tap 'homebrew/cask'
 tap 'homebrew/bundle'
+tap 'homebrew/cask-drivers'
 
 #Formulaes to be installed
 brew 'mas'
@@ -48,6 +49,7 @@ cask 'protonmail-bridge'
 cask 'spotify'
 cask 'megasync'
 cask 'zsa-wally'
+cask 'graphiql'
 
 cask 'lulu'
 cask 'knockknock'
