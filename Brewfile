@@ -18,9 +18,10 @@ brew 'cmake'
 brew 'ripgrep'
 brew 'diff-so-fancy'
 brew 'imagemagick'
-brew 'swiftlint'
 brew 'mkcert'
 brew 'nss'
+brew 'openssl@1.1'
+brew 'git'
 #
 # # Remove outdated versions from the cellar
 # cleanup
@@ -31,6 +32,8 @@ mas 'Pages', id: 409201541
 mas 'Tweetbot', id: 557168941
 mas 'Numbers', id: 409203825
 mas 'Xcode', id: 497799835
+# swiftlint depends on xcode to be installed
+brew 'swiftlint'
 
 # GUI apps
 cask 'firefox'
@@ -50,6 +53,7 @@ cask 'spotify'
 cask 'megasync'
 cask 'zsa-wally'
 cask 'graphiql'
+cask 'gpg-suite'
 
 cask 'lulu'
 cask 'knockknock'

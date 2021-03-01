@@ -17,3 +17,5 @@ install homebrew packages - run in terminal:
 ```
 brew bundle
 ```
+
+clone and run https://github.com/kristovatlas/osx-config-check
