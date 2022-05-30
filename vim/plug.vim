@@ -12,7 +12,8 @@ call plug#begin('~/.vim/plugged')
 " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Statusline
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
+Plug 'liuchengxu/eleline.vim'
 " Git
 Plug 'tpope/vim-fugitive'
 
@@ -21,18 +22,21 @@ Plug 'w0ng/vim-hybrid'
 " Plug 'fatih/vim-go', { 'tag': '*' }
 
 " Language pack, https://github.com/sheerun/vim-polyglot
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/html5.vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'stephenway/postcss.vim'
+Plug 'cespare/vim-toml'
 
 " Svelte syntax highlighting
-"Plug 'evanleck/vim-svelte'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 " Plug 'leafOfTree/vim-svelte-plugin'
-Plug 'burner/vim-svelte'
+"Plug 'burner/vim-svelte'
 
 "linting
-Plug 'w0rp/ale'
-Plug 'jasonshell/vim-svg-indent'
-""Plug 'vim-syntastic/syntastic'
-""Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'w0rp/ale', {'on': 'ALEToggle' }
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -40,6 +44,12 @@ Plug 'junegunn/fzf.vim'
 
 " COC intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Emmet
+Plug 'mattn/emmet-vim'
+
+" Surround
+Plug 'tpope/vim-surround'
 
 " " Initialize plugin system
 call plug#end()

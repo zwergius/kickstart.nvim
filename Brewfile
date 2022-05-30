@@ -22,6 +22,7 @@ brew 'mkcert'
 brew 'nss'
 brew 'openssl@1.1'
 brew 'git'
+brew 'starship'
 #
 # # Remove outdated versions from the cellar
 # cleanup
