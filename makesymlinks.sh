@@ -8,7 +8,9 @@
 
 dir=~/Git/dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="brewfile vim_pluginsrc aliases bashrc zshrc gitconfig bash_profile vimrc vim gitignore"    # list of files/folders to symlink in homedi
+configdir=~/.config
+files="brewfile vim_pluginsrc aliases bashrc zshrc gitconfig bash_profile vimrc vim gitignore"    # list of files/folders to symlink in homedir
+configfolders="lvim"
 
 ##########
 
@@ -28,6 +30,14 @@ for file in $files; do
     mv ~/.$file $olddir
     echo "Creating symlink to $file in home directory."
     ln -f -s $dir/$file ~/.$file
+done
+
+# move any existing folder in .config to dotfiles_old, then create symlinks
+for folder in $configfolders; do
+  echo "Backing up $folder in $configdir to .dotfiles_old"
+  mv $configdir/$folder $olddir
+  echo "Creating symlink to $folder in home $configdir directory."
+  ln -f -s $dir/$folder $configdir/$folder
 done
 
 # installs antibody if needed
