@@ -53,8 +53,3 @@ done
 unset config_files updated_at
 
 eval "$(starship init zsh)"
-
-# pnpm
-export PNPM_HOME="/Users/zwergius/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
