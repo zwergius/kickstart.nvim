@@ -127,6 +127,9 @@ formatters.setup {
       "javascriptreact",
       "svelte",
       "vue",
+      "html",
+      "css",
+      "markdown",
     }
   },
 }
@@ -141,7 +144,7 @@ linters.setup {
       "typescript",
       "typescriptreact",
       "javascriptreact",
-      "svelte",
+      -- "svelte",
       "vue",
     }
   },
