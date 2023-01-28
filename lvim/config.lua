@@ -11,7 +11,8 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+vim.g.material_style = "deep ocean"
+lvim.colorscheme = "material"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -19,6 +20,8 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":update<cr>"
 lvim.keys.insert_mode["<C-s>"] = "<Esc>:update<cr>"
 -- unmap a default keymapping
+lvim.keys.normal_mode["<S-l>"] = false
+lvim.keys.normal_mode["<S-h>"] = false
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
@@ -57,7 +60,6 @@ lvim.builtin.telescope.defaults.mappings = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -114,6 +116,17 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   --  { command = "black", filetypes = { "python" } },
   --  { command = "isort", filetypes = { "python" } },
+  -- {
+  --   command = "eslint_d",
+  --   filetypes = {
+  --     "javascript",
+  --     "typescript",
+  --     "typescriptreact",
+  --     "javascriptreact",
+  --     "svelte",
+  --     "vue",
+  --   }
+  -- },
   {
     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
     command = "prettierd",
@@ -164,48 +177,51 @@ linters.setup {
 }
 
 -- Additional Plugins
--- lvim.plugins = {
---   {
---     "aca/emmet-ls",
---       config = function()
---         local lspconfig = require("lspconfig")
---         local configs = require("lspconfig/configs")
---
---         local capabilities = vim.lsp.protocol.make_client_capabilities()
---         capabilities.textDocument.completion.completionItem.snippetSupport = true
---         -- capabilities.textDocument.completion.completionItem.resolveSupport = {
---         --   properties = {
---         --     "documentation",
---         --     "detail",
---         --     "additionalTextEdits",
---         --   },
---         -- }
---
---     if not lspconfig.emmet_ls then
---       configs.emmet_ls = {
---         default_config = {
---           cmd = { "emmet-ls", "--stdio" },
---           filetypes = {
---             "html",
---             "css",
---             "javascript",
---             "typescript",
---             "typescriptreact",
---             "javascriptreact",
---             "svelte",
---             "vue",
---           },
---           root_dir = function(fname)
---             return vim.loop.cwd()
---             end,
---           settings = {},
---         },
---       }
---     end
---       lspconfig.emmet_ls.setup({ capabilities = capabilities })
---       end,
---   },
--- }
+lvim.plugins = {
+  { "sainnhe/sonokai" },
+  { "marko-cerovac/material.nvim" },
+  { "Shatur/neovim-ayu" },
+  --   {
+  --     "aca/emmet-ls",
+  --       config = function()
+  --         local lspconfig = require("lspconfig")
+  --         local configs = require("lspconfig/configs")
+  --
+  --         local capabilities = vim.lsp.protocol.make_client_capabilities()
+  --         capabilities.textDocument.completion.completionItem.snippetSupport = true
+  --         -- capabilities.textDocument.completion.completionItem.resolveSupport = {
+  --         --   properties = {
+  --         --     "documentation",
+  --         --     "detail",
+  --         --     "additionalTextEdits",
+  --         --   },
+  --         -- }
+  --
+  --     if not lspconfig.emmet_ls then
+  --       configs.emmet_ls = {
+  --         default_config = {
+  --           cmd = { "emmet-ls", "--stdio" },
+  --           filetypes = {
+  --             "html",
+  --             "css",
+  --             "javascript",
+  --             "typescript",
+  --             "typescriptreact",
+  --             "javascriptreact",
+  --             "svelte",
+  --             "vue",
+  --           },
+  --           root_dir = function(fname)
+  --             return vim.loop.cwd()
+  --             end,
+  --           settings = {},
+  --         },
+  --       }
+  --     end
+  --       lspconfig.emmet_ls.setup({ capabilities = capabilities })
+  --       end,
+  --   },
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
