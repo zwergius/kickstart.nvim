@@ -12,7 +12,7 @@ tap 'homebrew/cask-drivers'
 
 #Formulaes to be installed
 brew 'mas'
-brew 'vim'
+brew 'neovim'
 brew 'node'
 brew 'cmake'
 brew 'ripgrep'
@@ -23,6 +23,7 @@ brew 'nss'
 brew 'openssl@1.1'
 brew 'git'
 brew 'starship'
+brew 'warp'
 #
 # # Remove outdated versions from the cellar
 # cleanup
@@ -33,6 +34,7 @@ mas 'Pages', id: 409201541
 mas 'Tweetbot', id: 557168941
 mas 'Numbers', id: 409203825
 mas 'Xcode', id: 497799835
+mas 'Consent-O-Matic', id: 1606897889
 # swiftlint depends on xcode to be installed
 brew 'swiftlint'
 
@@ -41,9 +43,10 @@ cask 'firefox'
 cask 'google-chrome'
 cask 'brave-browser'
 cask 'opera'
+cask 'sizzy'
 
 cask 'discord'
-cask 'skype'
+#cask 'skype'
 cask 'signal'
 cask 'zoom'
 
@@ -51,10 +54,16 @@ cask 'rectangle'
 cask 'choosy'
 cask 'protonmail-bridge'
 cask 'spotify'
-cask 'megasync'
+cask 'netnewswire'
+#cask 'megasync'
 cask 'zsa-wally'
 cask 'graphiql'
-cask 'gpg-suite'
+#cask 'gpg-suite'
+cask 'affinity-designer'
+cask 'affinity-photo'
+cask 'affinity-publisher'
+cask 'visual-studio-code'
+cask 'epic-games'
 
 cask 'lulu'
 cask 'knockknock'

@@ -15,6 +15,7 @@ export VIMPLUG=$DOTFILES/vim/plug.vim
 export HOMEBREW_BUNDLE_FILE=~/.brewfile
 export N_PREFIX=$HOME/.n
 export PATH="$N_PREFIX/bin:$PATH" # use n for node versions
+export DOTNET_CLI_TELEMETRY_OPTOUT='false'
 
 source $HOME/.vim_pluginsrc
 
@@ -53,3 +54,12 @@ done
 unset config_files updated_at
 
 eval "$(starship init zsh)"
+
+#Ruby
+export PATH="$HOME/.rbenv/bin:$PATH" # rbenv ruby version manager
+eval "$(rbenv init -)"
+
+# pnpm
+export PNPM_HOME="/Users/zwergius/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
