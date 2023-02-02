@@ -14,6 +14,7 @@ tap 'homebrew/cask-drivers'
 brew 'mas'
 brew 'neovim'
 brew 'node'
+brew 'n'
 brew 'cmake'
 brew 'ripgrep'
 brew 'diff-so-fancy'
@@ -23,7 +24,7 @@ brew 'nss'
 brew 'openssl@1.1'
 brew 'git'
 brew 'starship'
-brew 'warp'
+
 #
 # # Remove outdated versions from the cellar
 # cleanup
@@ -35,8 +36,14 @@ mas 'Tweetbot', id: 557168941
 mas 'Numbers', id: 409203825
 mas 'Xcode', id: 497799835
 mas 'Consent-O-Matic', id: 1606897889
+
 # swiftlint depends on xcode to be installed
 brew 'swiftlint'
+
+# Adnami specific
+brew 'azure-cli'
+cask 'dotnet-sdk'
+cask 'powershell'
 
 # GUI apps
 cask 'firefox'
@@ -46,7 +53,7 @@ cask 'opera'
 cask 'sizzy'
 
 cask 'discord'
-#cask 'skype'
+cask 'slack'
 cask 'signal'
 cask 'zoom'
 
@@ -64,6 +71,7 @@ cask 'affinity-photo'
 cask 'affinity-publisher'
 cask 'visual-studio-code'
 cask 'epic-games'
+cask 'warp'
 
 cask 'lulu'
 cask 'knockknock'
