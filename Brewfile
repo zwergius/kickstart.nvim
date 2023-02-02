@@ -24,6 +24,8 @@ brew 'nss'
 brew 'openssl@1.1'
 brew 'git'
 brew 'starship'
+brew 'exa'
+brew 'bat'
 
 #
 # # Remove outdated versions from the cellar
