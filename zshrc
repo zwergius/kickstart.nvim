@@ -49,6 +49,11 @@ eval "$(starship init zsh)"
 #Ruby
 #export PATH="$HOME/.rbenv/bin:$PATH" # rbenv ruby version manager
 #eval "$(rbenv init -)"
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
+
+# direnv
+eval "$(direnv hook zsh)"
 
 # pnpm
 export PNPM_HOME="/Users/zwergius/Library/pnpm"
