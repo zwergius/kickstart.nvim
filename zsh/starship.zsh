@@ -10,7 +10,7 @@ elif [[ -f $MFILE ]]; then
   _device=$(system_profiler SPHardwareDataType | awk '/Model Name/ {print $3,$4,$5,$6,$7}')
 
   case $_device in
-    *MacBook*)     DEVICE="";;
+    *MacBook*)     DEVICE="";;
     *)             DEVICE="";;
   esac
 fi
@@ -39,7 +39,7 @@ case $_distro in
     *devuan*)                ICON="";;
     *manjaro*)               ICON="";;
     *rhel*)                  ICON="";;
-    *macos*)                 ICON="";;
+    *macos*)                 ICON="";;
     *)                       ICON="";;
 esac
 

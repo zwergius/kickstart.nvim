@@ -6,15 +6,16 @@
 #brew 'upgrade'
 
 # tap's 
-tap 'homebrew/cask'
+#tap 'homebrew/cask'
 tap 'homebrew/bundle'
-tap 'homebrew/cask-drivers'
+#tap 'homebrew/cask-drivers'
+tap 'homebrew/cask-fonts'
 
 #Formulaes to be installed
-brew 'mas'
-brew 'neovim'
-brew 'node'
-brew 'n'
+brew 'mas' # Mac AppStore
+brew 'neovim' # Neovim
+brew 'node' # Node
+brew 'n' # Node Version Manager
 brew 'cmake'
 brew 'ripgrep'
 brew 'diff-so-fancy'
@@ -26,6 +27,8 @@ brew 'git'
 brew 'starship'
 brew 'exa'
 brew 'bat'
+cask 'font-iosevka-term-nerd-font'
+cask 'font-iosevka-nerd-font'
 
 #
 # # Remove outdated versions from the cellar

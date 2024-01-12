@@ -59,3 +59,6 @@ eval "$(direnv hook zsh)"
 export PNPM_HOME="/Users/zwergius/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# alacritty tab title
+preexec() { print -Pn "\e]0;$1%~\a" }

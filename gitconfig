@@ -49,7 +49,9 @@
   # show un merged
   sm = diff --name-status --diff-filter=U
   unstage = reset --
-
+  
+  # Delete all the local merged branches
+  cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|main\\|develop\\|dev' | xargs -n 1 -r git branch -d"
   # fetch and rebase
   # if not arguments passed, the command executed will be git fetch origin <current-branch>
   # usage:
@@ -83,3 +85,5 @@
   path = ~/.local.gitconfig
 [pull]
 	ff = only
+[fetch]
+	prune = true

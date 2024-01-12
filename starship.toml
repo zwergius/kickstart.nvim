@@ -7,7 +7,7 @@ format = """$env_var $all"""  # Add custom formatting before other stuff
 
 # Drop ugly default prompt characters
 [character]
-success_symbol = ""
+success_symbol = "[❯](bold green)"
 error_symbol = ""
 
 # ---

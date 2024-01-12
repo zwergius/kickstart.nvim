@@ -14,9 +14,8 @@ lvim.format_on_save = true
 vim.g.material_style = "deep ocean"
 lvim.colorscheme = "material"
 vim.opt.fileencoding = "utf-8" -- the encoding written to a file
-vim.opt.foldmethod = "manual" -- folding set to "expr" for treesitter based folding
-vim.opt.foldmethod = "manual" -- folding set to "expr" for treesitter based folding
-vim.opt.foldexpr = "" -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+vim.opt.foldmethod = "manual"  -- folding set to "expr" for treesitter based folding
+vim.opt.foldexpr = ""          -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -185,7 +184,8 @@ lvim.plugins = {
   { "sainnhe/sonokai" },
   { "marko-cerovac/material.nvim" },
   { "Shatur/neovim-ayu" },
-  { "zbirenbaum/copilot.lua",
+  {
+    "zbirenbaum/copilot.lua",
     event = { "VimEnter" },
     config = function()
       vim.defer_fn(function()
@@ -196,7 +196,8 @@ lvim.plugins = {
     end,
   },
 
-  { "zbirenbaum/copilot-cmp",
+  {
+    "zbirenbaum/copilot-cmp",
     after = { "copilot.lua", "nvim-cmp" },
   },
   --   {
