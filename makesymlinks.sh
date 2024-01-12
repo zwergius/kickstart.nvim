@@ -6,7 +6,7 @@
 
 ########## Variables
 
-dir=~/Git/dotfiles                    # dotfiles directory
+dir=~/Code/dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
 lvimconfigdir=~/.config/lvim
 files="brewfile vim_pluginsrc aliases bashrc zshrc gitconfig bash_profile vimrc vim gitignore"    # list of files/folders to symlink in homedir
@@ -49,4 +49,4 @@ done
 # done
 
 # installs antibody if needed
-$dir/antibody/install.sh
+#S$dir/antibody/install.sh
