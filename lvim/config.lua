@@ -13,6 +13,9 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 vim.g.material_style = "deep ocean"
 lvim.colorscheme = "material"
+vim.opt.fileencoding = "utf-8" -- the encoding written to a file
+vim.opt.foldmethod = "manual"  -- folding set to "expr" for treesitter based folding
+vim.opt.foldexpr = ""          -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -175,12 +178,28 @@ linters.setup {
   --   filetypes = { "javascript", "python" },
   -- },
 }
-
+require("lvim.lsp.manager").setup("emmet_ls")
 -- Additional Plugins
 lvim.plugins = {
   { "sainnhe/sonokai" },
   { "marko-cerovac/material.nvim" },
   { "Shatur/neovim-ayu" },
+  {
+    "zbirenbaum/copilot.lua",
+    event = { "VimEnter" },
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup {
+          plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+        }
+      end, 100)
+    end,
+  },
+
+  {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua", "nvim-cmp" },
+  },
   --   {
   --     "aca/emmet-ls",
   --       config = function()
@@ -223,6 +242,9 @@ lvim.plugins = {
   --   },
 }
 
+-- Can not be placed into the config method of the plugins.
+lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
