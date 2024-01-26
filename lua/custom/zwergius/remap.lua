@@ -1,20 +1,31 @@
+function Map(mode, lhs, rhs, opts)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend('force', options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
+end
+
 -- Easy save with CTRL + s
-vim.keymap.set('n', '<C-s>', ':update<cr>', { noremap = true })
-vim.keymap.set({ 'i', 'v' }, '<C-s>', '<Esc>:update<cr>', { noremap = true })
+Map('n', '<C-s>', ':update<cr>')
+Map({ 'i', 'v' }, '<C-s>', '<Esc>:update<cr>')
 
 -- Split Movement
-vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
+Map('n', '<C-h>', '<C-w>h')
+Map('n', '<C-j>', '<C-w>j')
+Map('n', '<C-k>', '<C-w>k')
+Map('n', '<C-l>', '<C-w>l')
 
 -- Jump and keep cursor in the middle
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
+Map('n', '<C-d>', '<C-d>zz')
+Map('n', '<C-u>', '<C-u>zz')
 
 -- Keep searchterms in the middle
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
+Map('n', 'n', 'nzzzv')
+Map('n', 'N', 'Nzzzv')
 
 -- Paste over visually selected maintaining clipboard
-vim.keymap.set('x', '<leader>p', [["_dP]])
+Map('x', '<leader>p', [["_dP]])
+
+-- Remove search highlight until next search
+Map('n', '<leader>h', ':nohlsearch<CR>', { desc = 'No Highlight' })
