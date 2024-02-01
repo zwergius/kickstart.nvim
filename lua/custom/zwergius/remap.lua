@@ -7,18 +7,18 @@ function Map(mode, lhs, rhs, opts)
 end
 
 -- Easy save with CTRL + s
-Map('n', '<C-s>', ':update<cr>')
-Map({ 'i', 'v' }, '<C-s>', '<Esc>:update<cr>')
+Map('n', '<C-s>', ':update<cr>', { desc = 'Save buffer' })
+Map({ 'i', 'v' }, '<C-s>', '<Esc>:update<cr>', { desc = 'Save buffer' })
 
 -- Split Movement
-Map('n', '<C-h>', '<C-w>h')
-Map('n', '<C-j>', '<C-w>j')
-Map('n', '<C-k>', '<C-w>k')
-Map('n', '<C-l>', '<C-w>l')
+Map('n', '<C-h>', '<C-w>h', { desc = 'Move focus left' })
+Map('n', '<C-j>', '<C-w>j', { desc = 'Move focus up' })
+Map('n', '<C-k>', '<C-w>k', { desc = 'Move focus down' })
+Map('n', '<C-l>', '<C-w>l', { desc = 'Move focus right' })
 
 -- Jump and keep cursor in the middle
-Map('n', '<C-d>', '<C-d>zz')
-Map('n', '<C-u>', '<C-u>zz')
+Map('n', '<C-d>', '<C-d>zz', { desc = 'Move down & center' })
+Map('n', '<C-u>', '<C-u>zz', { desc = 'Move up & center' })
 
 -- Keep searchterms in the middle
 Map('n', 'n', 'nzzzv')

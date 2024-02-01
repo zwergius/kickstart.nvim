@@ -21,6 +21,6 @@ return {
         },
       },
     }
-    vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>', { desc = 'Open filetree explorer' })
+    vim.keymap.set('n', '<leader>f', '<Cmd>Neotree toggle<CR>', { desc = 'Open filetree explorer' })
   end,
 }
