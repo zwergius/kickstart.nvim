@@ -20,6 +20,16 @@ return {
           },
         },
       },
+      git_status = {
+        symbols = {
+          unstaged  = '✗',
+          untracked = '',
+          ignored   = '',
+          -- unstaged  = '󰄱',
+          staged    = '',
+          conflict  = '',
+        },
+      },
     }
     vim.keymap.set('n', '<leader>f', '<Cmd>Neotree toggle<CR>', { desc = 'Open filetree explorer' })
   end,
