@@ -11,10 +11,10 @@ Map('n', '<C-s>', ':update<cr>', { desc = 'Save buffer' })
 Map({ 'i', 'v' }, '<C-s>', '<Esc>:update<cr>', { desc = 'Save buffer' })
 
 -- Split Movement
-Map('n', '<C-h>', '<C-w>h', { desc = 'Move focus left' })
-Map('n', '<C-j>', '<C-w>j', { desc = 'Move focus up' })
-Map('n', '<C-k>', '<C-w>k', { desc = 'Move focus down' })
-Map('n', '<C-l>', '<C-w>l', { desc = 'Move focus right' })
+-- Map('n', '<C-h>', '<C-w>h', { desc = 'Move focus left' })
+-- Map('n', '<C-j>', '<C-w>j', { desc = 'Move focus up' })
+-- Map('n', '<C-k>', '<C-w>k', { desc = 'Move focus down' })
+-- Map('n', '<C-l>', '<C-w>l', { desc = 'Move focus right' })
 
 -- Jump and keep cursor in the middle
 Map('n', '<C-d>', '<C-d>zz', { desc = 'Move down & center' })
