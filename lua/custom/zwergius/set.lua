@@ -31,6 +31,9 @@ vim.filetype.add {
   },
 }
 
+-- Fold method
+vim.o.foldmethod = 'syntax'
+
 -- Spellchecking
 vim.o.spelllang = 'en_gb'
 vim.o.spell = true
