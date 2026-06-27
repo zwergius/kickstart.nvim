@@ -32,11 +32,12 @@ vim.filetype.add {
 }
 
 -- Fold method
-vim.o.foldmethod = 'syntax'
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
 -- Spellchecking
 vim.o.spelllang = 'en_gb'
 vim.o.spell = true
 
 -- Autocommand create folder(s) for new file
-vim.cmd 'source ~/.config/nvim/vim/auto-mkdir.vim'
+vim.cmd.source(vim.fs.joinpath(vim.fn.stdpath 'config', 'vim', 'auto-mkdir.vim'))
