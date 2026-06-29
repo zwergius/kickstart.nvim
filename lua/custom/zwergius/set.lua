@@ -34,6 +34,8 @@ vim.filetype.add {
 -- Fold method
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
 
 -- Spellchecking
 vim.o.spelllang = 'en_gb'
