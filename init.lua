@@ -701,8 +701,6 @@ do
     -- But for many setups, the LSP (`ts_ls`) will work just fine
     -- ts_ls = {},
 
-    stylua = {}, -- Used to format Lua code
-
     -- Special Lua Config, as recommended by neovim help docs
     lua_ls = {
       on_init = function(client)
@@ -758,6 +756,7 @@ do
   local ensure_installed = vim.tbl_keys(servers or {})
   vim.list_extend(ensure_installed, {
     -- You can add other tools here that you want Mason to install
+    'stylua', -- Used to format Lua code
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -983,6 +982,8 @@ end
 
 require 'custom.zwergius.set'
 require 'custom.zwergius.remap'
+require 'custom.zwergius.lsp'
+require 'custom.zwergius.format'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
