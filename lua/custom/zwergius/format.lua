@@ -21,9 +21,7 @@ for filetype in pairs(web_filetypes) do
   conform.formatters_by_ft[filetype] = prettier
 end
 
--- Svelte formatting needs project-local prettier-plugin-svelte, which project-local
--- prettier resolves more reliably than the global prettierd daemon.
-conform.formatters_by_ft.svelte = { 'prettier' }
+conform.formatters_by_ft.svelte = prettier
 
 vim.api.nvim_create_autocmd('BufWritePre', {
   desc = 'Format web files on save',
